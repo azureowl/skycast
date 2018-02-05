@@ -1,0 +1,28 @@
+{
+  "name": "skycast",
+  "version": "1.0.0",
+  "description": "Weather App in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azureowl/skycast.git"
+  },
+  "keywords": [
+    "weather",
+    "node"
+  ],
+  "author": "Ro La",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azureowl/skycast/issues"
+  },
+  "homepage": "https://github.com/azureowl/skycast#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1"
+  }
+}
