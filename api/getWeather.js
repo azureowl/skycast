@@ -13,7 +13,7 @@ var dsReq = `https://api.darksky.net/forecast/${config.getKey().ds_key}`;
 // Fetch weather data using geocoding
 
 const getWeather = () => {
-    axios.get(geoReq)
+    return axios.get(geoReq)
     .then((response) => {
         var geodata = {
           formatted_add: response.data.results[0].formatted_address,
@@ -40,14 +40,13 @@ const getWeather = () => {
             }
         };
 
-        console.log(dsdata);
+        return dsdata;
     })
     .catch((e) => {
         console.log(e);
     });
 };
 
-getWeather();
 
 module.exports = {
     getWeather
