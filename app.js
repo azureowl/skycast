@@ -8,13 +8,13 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 const skycast = require('./api/getWeather');
-const dsObject = require('./api/weather.json');
+const dsObject = require('./api/weather.js');
 
 app.get('/', (req, res) => { 
-    var result = skycast.getWeather();
+    var result = dsObject.storedData();
     
     result.then((response) => {
-        res.render('index', dsObject);
+        res.render('index', response);
     });
 
 });
