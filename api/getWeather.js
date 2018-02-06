@@ -21,8 +21,10 @@ const getWeather = () => {
           long: response.data.results[0].geometry.location.lng
         };
         
-        console.log(geodata.formatted_add);
-        return axios.get(`${dsReq}/${geodata.lat},${geodata.long}`);
+        // Add formatted_add to GET config to include in the final return value
+        return axios.get(`${dsReq}/${geodata.lat},${geodata.long}`, {
+            formatted_add: geodata.formatted_add
+        });
       
     })
     .then((response) => {
@@ -39,14 +41,16 @@ const getWeather = () => {
                 dailyLow: response.data.daily.data[0].temperatureLow
             }
         };
-
-        return dsdata;
+        
+        return {
+            dsdata: dsdata,
+            formatted_add: response.config.formatted_add
+        };
     })
     .catch((e) => {
         console.log(e);
     });
 };
-
 
 module.exports = {
     getWeather

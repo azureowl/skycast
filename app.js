@@ -5,24 +5,16 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 app.set('view engine', 'hbs');
+app.use(express.static(__dirname + '/public'));
 
 const skycast = require('./api/getWeather');
+const dsObject = require('./api/weather.json');
 
 app.get('/', (req, res) => { 
     var result = skycast.getWeather();
     
     result.then((response) => {
-        res.render('index', {
-            pageTitle: "Skycast",
-            intro: "Welcome to my weather app!",
-            temp: response.current.temp,
-            feelsLike: response.current.appTemp,
-            summary: response.current.summary,
-            dailyWkSum: response.daily.summary,
-            dailySum: response.daily.dailySummary,
-            dailyHigh: response.daily.dailyHigh,
-            dailyLow: response.daily.dailyLow
-        });
+        res.render('index', dsObject);
     });
 
 });
