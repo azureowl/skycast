@@ -1,7 +1,7 @@
 const skycast = require('./getWeather');
 
-var storedData = () => {
-    var result = skycast.getWeather();
+var storedData = (address) => {
+    var result = skycast.getWeather(address);
     
     return result.then((response) => {
         return dsObject = {

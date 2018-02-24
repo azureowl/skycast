@@ -1,18 +1,18 @@
-
 const config = require('../config/config.js');
 const axios = require('axios');
 
 // for geocode, look into autocomplete feature
 // https://developers.google.com/maps/documentation/geocoding/best-practices
 
-// will be user input
-var encodedURL = encodeURIComponent("1600 Amphitheatre Parkway, Mountain View, CA");
-var geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedURL}&key=${config.getKey().gg_key}`;
+let search = (userInput) => {
+    return encodeURIComponent(userInput);
+};
+
 var dsReq = `https://api.darksky.net/forecast/${config.getKey().ds_key}`;
 
-// Fetch weather data using geocoding
-
-const getWeather = () => {
+const getWeather = (address) => {
+    let geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${search(address)}&key=${config.getKey().gg_key}`;
+    
     return axios.get(geoReq)
     .then((response) => {
         var geodata = {
@@ -48,7 +48,7 @@ const getWeather = () => {
         };
     })
     .catch((e) => {
-        console.log(e);
+        console.log('Unable to find that address', e);
     });
 };
 

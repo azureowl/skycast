@@ -23,6 +23,7 @@
   "homepage": "https://github.com/azureowl/skycast#readme",
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "hbs": "^4.0.1"
   }
