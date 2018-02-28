@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.post('/weather', (req, res) => {
+app.post('/', (req, res) => {
     let address = req.body.address;
     let result = dsObject.storedData(address);
     
     result.then((response) => {
-        res.render('weather', response);
+        res.render('index', response);
     }, (err) => {
         res.send('Unable to locate that address.');
     });

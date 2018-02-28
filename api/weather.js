@@ -6,8 +6,6 @@ var storedData = (address) => {
     return result.then((response) => {
         return dsObject = {
             address: response.formatted_add,
-            pageTitle: "Skycast",
-            intro: "Welcome to my weather app!",
             temp: response.dsdata.current.temp,
             feelsLike: response.dsdata.current.appTemp,
             summary: response.dsdata.current.summary,

@@ -10,14 +10,32 @@
 </head>
 <body>
     <header>
-        <h1>{{pageTitle}}</h1>
-        <p>{{intro}}</p>
+        <h1>Skycast</h1>
+        <p>Welcome to my weather app!</p>
     </header>
 
-    <form id="searchForm" action="/weather" method="post">
+    <form id="searchForm" action="/" method="post">
         <label for="address">What's the weather? </label>
         <input type="text" id="address" name="address">
         <button type="submit">Submit</button>
     </form>
+
+    <h3>What's the Weather For</h3>
+    <p>{{address}}</p>
+
+    <div class="display">
+        <div class="main-weather">
+            <h2>Right Now</h2>
+            <span>{{temp}}&deg;F</span>
+            <span>{{feelsLike}}&deg;F</span>
+            <span>{{summary}}</span>
+        </div>
+        <div class="day-weather">
+            <h2>Today's Forecast</h2>
+            <span>{{dailyWkSum}}</span>
+            <span>{{dailyHigh}}&deg;F</span>
+            <span>{{dailyLow}}&deg;F</span>
+        </div>
+    </div>
 </body>
 </html>
