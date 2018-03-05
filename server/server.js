@@ -7,9 +7,8 @@ const port = process.env.PORT || 3000;
 
 // Local imports
 const dsObject = require('../api/weather.js');
-
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => { 
