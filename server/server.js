@@ -20,6 +20,7 @@ app.post('/', (req, res) => {
     let result = dsObject.storedData(address);
     
     result.then((response) => {
+        console.log(response);
         res.render('index', response);
     }, (err) => {
         res.send('Unable to locate that address.');

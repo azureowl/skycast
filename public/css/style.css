@@ -1,3 +1,67 @@
-span {
-  color: blue;
+/* line 8, style.scss */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* line 14, style.scss */
+body {
+  background-color: #fcfcfc;
+}
+
+/* line 18, style.scss */
+nav {
+  background-color: #333333;
+  color: #ffffff;
+  display: table;
+  width: 100%;
+}
+/* line 23, style.scss */
+nav a, nav a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+/* line 27, style.scss */
+nav div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1em;
+}
+
+/* line 35, style.scss */
+header {
+  background-color: #eeeeee;
+}
+/* line 37, style.scss */
+header .search {
+  padding: 1em;
+}
+/* line 39, style.scss */
+header .search form {
+  background-color: #333333;
+  width: 50%;
+}
+/* line 42, style.scss */
+header .search form input {
+  border: 0;
+  border-radius: 20px;
+  height: 2.5em;
+  padding: .5em;
+  width: 80%;
+}
+
+/* line 53, style.scss */
+span {
+  color: #00AABB;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -9,23 +9,28 @@
     <title>Skycast</title>
 </head>
 <body>
+    <nav>
+        <div class="inner">
+            <h1>Skycast</h1>
+            <a href="https://azureowl.github.io/azureowl-portfolio/index.html">Home</a>
+        </div>
+    </nav>
+
     <header>
-        <h1>Skycast</h1>
-        <p>Welcome to my weather app!</p>
+        <div class="search">
+            <form id="searchForm" action="/" method="post">
+                <input type="text" id="address" name="address" placeholder="1600 Amphitheatre Parkway Mountain View, CA 94043">
+                <button type="submit">Submit</button>
+            </form>    
+        </div>
     </header>
 
-    <form id="searchForm" action="/" method="post">
-        <label for="address">What's the weather? </label>
-        <input type="text" id="address" name="address">
-        <button type="submit">Submit</button>
-    </form>
-
-    <h3>What's the Weather For</h3>
     <p>{{address}}</p>
 
     <div class="display">
         <div class="main-weather">
             <h2>Right Now</h2>
+            <canvas id="icon1" width="80" height="80" class={{icon}}></canvas>
             <span>{{temp}}&deg;F</span>
             <span>{{feelsLike}}&deg;F</span>
             <span>{{summary}}</span>
@@ -37,5 +42,6 @@
             <span>{{dailyLow}}&deg;F</span>
         </div>
     </div>
+    <script src="/skycons/skycons.js"></script>
 </body>
 </html>

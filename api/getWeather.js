@@ -28,7 +28,8 @@ const getWeather = (address) => {
             current: {
                 temp: response.data.currently.temperature,
                 appTemp: response.data.currently.apparentTemperature,
-                summary: response.data.currently.summary
+                summary: response.data.currently.summary,
+                icon: response.data.currently.icon,
             },
             daily: {
                 summary: response.data.daily.summary,

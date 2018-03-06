@@ -12,7 +12,8 @@ var storedData = (address) => {
             dailyWkSum: response.dsdata.daily.summary,
             dailySum: response.dsdata.daily.dailySummary,
             dailyHigh: response.dsdata.daily.dailyHigh,
-            dailyLow: response.dsdata.daily.dailyLow
+            dailyLow: response.dsdata.daily.dailyLow,
+            icon: response.dsdata.current.icon
         };    
     });
 };
