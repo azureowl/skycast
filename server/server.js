@@ -11,8 +11,16 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => { 
-    res.render('index');
+app.get('/', (req, res) => {
+    // Placeholder temperature rendered for Google HQ
+    let address = req.body.address || "1600 Amphitheatre Parkway Mountain View, CA 94043";
+    let result = dsObject.storedData(address);
+    
+    result.then((response) => {
+        res.render('index', response);
+    }, (err) => {
+        res.send('Unable to locate that address.');
+    });
 });
 
 app.post('/', (req, res) => {
@@ -20,7 +28,6 @@ app.post('/', (req, res) => {
     let result = dsObject.storedData(address);
     
     result.then((response) => {
-        console.log(response);
         res.render('index', response);
     }, (err) => {
         res.send('Unable to locate that address.');

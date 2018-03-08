@@ -4,16 +4,20 @@ var storedData = (address) => {
     var result = skycast.getWeather(address);
     
     return result.then((response) => {
+        console.log(response.dsdata.current.alertsTrue);
         return dsObject = {
             address: response.formatted_add,
+            lat: response.lat,
+            long: response.long,
             temp: response.dsdata.current.temp,
             feelsLike: response.dsdata.current.appTemp,
             summary: response.dsdata.current.summary,
-            dailyWkSum: response.dsdata.daily.summary,
-            dailySum: response.dsdata.daily.dailySummary,
+            hourly: response.dsdata.current.hourly,
             dailyHigh: response.dsdata.daily.dailyHigh,
             dailyLow: response.dsdata.daily.dailyLow,
-            icon: response.dsdata.current.icon
+            icon: response.dsdata.current.icon,
+            alert: response.dsdata.current.alerts,
+            alertsTrue: response.dsdata.current.alertsTrue
         };    
     });
 };

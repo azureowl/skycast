@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
 $gr: #333333;
 $lt-gr: #eeeeee;
+$md-gr: #d0d0d0;
 $bg: #fcfcfc;
 $bl: #00AABB;
 $wh: #ffffff;
@@ -13,6 +16,7 @@ $wh: #ffffff;
 
 body {
     background-color: $bg;
+    font-family: 'Lato', sans-serif;
 }
 
 nav {
@@ -37,12 +41,13 @@ header {
     & .search {
         padding: 1em;
         & form {
-            background-color: $gr;
-            width: 50%;
-            & input {
+            // background-color: $gr;
+            width: 65%;
+            & input[type="text"] {
                 border: 0;
                 border-radius: 20px;
-                height: 2.5em;
+                font-size: 1em;
+                height: 1.8em;
                 padding: .5em;
                 width: 80%;
             }
@@ -50,6 +55,86 @@ header {
     }
 }
 
-span {
-    color: $bl;
+button {
+    border: none;
+    border-radius: 5px;
+    margin: 0 0 0 .5em;
+    padding: 0;
+
+    /* inherit font & color from ancestor */
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    background-color: $md-gr;
+    color: $gr;
+    height: 1.8em;
+    vertical-align: bottom;
+    width: 1.8em;
+
+    & i {
+        font-size: 1em;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+.display {
+    margin: 3em 0 3em 0;
+}
+
+.weather {
+    color: $gr;
+    font-size: 1.8em;
+    & .weather-main {
+        text-align: center;
+    }
+    & .weather-main div:nth-child(1), & .weather-main div:nth-child(2) {
+        display: inline-block;
+    }
+    & .weather-main div:nth-child(2) {
+        vertical-align: top;
+        & .secondary {
+            display: block;
+            font-size: 16px;
+            & .weather-attr {
+                padding: 0 .5em 0 0;
+            }
+        }
+    }
+    
+    & .hourly, & .secondary > span {
+        font-weight: 300;
+    }
+    & .hourly {
+        text-align: center;
+    }
+    & .weather-attr {
+        font-weight: bold;
+    }
+    & .alert {
+        display: none;
+    }
+    & p[data-alert="true"] {
+        display: block;
+        color: red;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 1em;
+        & i {
+            margin-right: .5em;
+        }
+    }
 }

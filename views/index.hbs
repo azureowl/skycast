@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://use.fontawesome.com/2e7b5ddcf5.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,29 +20,35 @@
     <header>
         <div class="search">
             <form id="searchForm" action="/" method="post">
-                <input type="text" id="address" name="address" placeholder="1600 Amphitheatre Parkway Mountain View, CA 94043">
-                <button type="submit">Submit</button>
+                <input type="text" id="address" name="address" placeholder="1600 Amphitheatre Parkway Mountain View, CA 94043" value="{{address}}">
+                <button type="submit"><i class="fa fa-search"></i></button>
             </form>    
         </div>
     </header>
 
-    <p>{{address}}</p>
-
     <div class="display">
-        <div class="main-weather">
-            <h2>Right Now</h2>
-            <canvas id="icon1" width="80" height="80" class={{icon}}></canvas>
-            <span>{{temp}}&deg;F</span>
-            <span>{{feelsLike}}&deg;F</span>
-            <span>{{summary}}</span>
-        </div>
-        <div class="day-weather">
-            <h2>Today's Forecast</h2>
-            <span>{{dailyWkSum}}</span>
-            <span>{{dailyHigh}}&deg;F</span>
-            <span>{{dailyLow}}&deg;F</span>
+        <div class="today">
+            <div class="weather">
+                <p class="alert" data-alert={{alertsTrue}}><i class="fa fa-exclamation-circle"></i> {{alert}}</p>
+                <div class="weather-main">
+                    <div>
+                        <canvas id="icon1" width="65" height="65" class={{icon}}></canvas>
+                    </div>
+                    <div>
+                        <span class="weather-attr">{{temp}}&deg;</span>
+                        <span class="weather-attr">{{summary}}</span>
+                        <div class="secondary">
+                            <span><span class="weather-attr">Feels like:</span> {{feelsLike}}&deg;</span>
+                            <span><span class="weather-attr">Low:</span> {{dailyLow}}&deg;</span>
+                            <span><span class="weather-attr">High:</span> {{dailyHigh}}&deg;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hourly">{{hourly}}</div>
+            </div>
         </div>
     </div>
+    <script src='https://darksky.net/map-embed/@temperature,{{lat}},{{long}},7.js?embed=true&timeControl=true&fieldControl=true&defaultField=temperature&defaultUnits=_f'></script>
     <script src="/skycons/skycons.js"></script>
 </body>
 </html>

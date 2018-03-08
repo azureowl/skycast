@@ -1,4 +1,5 @@
-/* line 8, style.scss */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700");
+/* line 11, style.scss */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,24 +7,25 @@
   padding: 0;
 }
 
-/* line 14, style.scss */
+/* line 17, style.scss */
 body {
   background-color: #fcfcfc;
+  font-family: 'Lato', sans-serif;
 }
 
-/* line 18, style.scss */
+/* line 22, style.scss */
 nav {
   background-color: #333333;
   color: #ffffff;
   display: table;
   width: 100%;
 }
-/* line 23, style.scss */
+/* line 27, style.scss */
 nav a, nav a:visited {
   color: #ffffff;
   text-decoration: none;
 }
-/* line 27, style.scss */
+/* line 31, style.scss */
 nav div {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -37,31 +39,118 @@ nav div {
   margin: 1em;
 }
 
-/* line 35, style.scss */
+/* line 39, style.scss */
 header {
   background-color: #eeeeee;
 }
-/* line 37, style.scss */
+/* line 41, style.scss */
 header .search {
   padding: 1em;
 }
-/* line 39, style.scss */
+/* line 43, style.scss */
 header .search form {
-  background-color: #333333;
-  width: 50%;
+  width: 65%;
 }
-/* line 42, style.scss */
-header .search form input {
+/* line 46, style.scss */
+header .search form input[type="text"] {
   border: 0;
   border-radius: 20px;
-  height: 2.5em;
+  font-size: 1em;
+  height: 1.8em;
   padding: .5em;
   width: 80%;
 }
 
-/* line 53, style.scss */
-span {
-  color: #00AABB;
+/* line 58, style.scss */
+button {
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 0 .5em;
+  padding: 0;
+  /* inherit font & color from ancestor */
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  background-color: #d0d0d0;
+  color: #333333;
+  height: 1.8em;
+  vertical-align: bottom;
+  width: 1.8em;
+}
+/* line 83, style.scss */
+button i {
+  font-size: 1em;
+}
+/* line 87, style.scss */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 93, style.scss */
+.display {
+  margin: 3em 0 3em 0;
+}
+
+/* line 97, style.scss */
+.weather {
+  color: #333333;
+  font-size: 1.8em;
+}
+/* line 100, style.scss */
+.weather .weather-main {
+  text-align: center;
+}
+/* line 103, style.scss */
+.weather .weather-main div:nth-child(1), .weather .weather-main div:nth-child(2) {
+  display: inline-block;
+}
+/* line 106, style.scss */
+.weather .weather-main div:nth-child(2) {
+  vertical-align: top;
+}
+/* line 108, style.scss */
+.weather .weather-main div:nth-child(2) .secondary {
+  display: block;
+  font-size: 16px;
+}
+/* line 111, style.scss */
+.weather .weather-main div:nth-child(2) .secondary .weather-attr {
+  padding: 0 .5em 0 0;
+}
+/* line 117, style.scss */
+.weather .hourly, .weather .secondary > span {
+  font-weight: 300;
+}
+/* line 120, style.scss */
+.weather .hourly {
+  text-align: center;
+}
+/* line 123, style.scss */
+.weather .weather-attr {
+  font-weight: bold;
+}
+/* line 126, style.scss */
+.weather .alert {
+  display: none;
+}
+/* line 129, style.scss */
+.weather p[data-alert="true"] {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 1em;
+}
+/* line 136, style.scss */
+.weather p[data-alert="true"] i {
+  margin-right: .5em;
 }
 
 /*# sourceMappingURL=style.css.map */

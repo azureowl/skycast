@@ -19,29 +19,38 @@ const getWeather = (address) => {
         };
         
         return axios.get(`${dsReq}/${geodata.lat},${geodata.long}`, {
-            formatted_add: geodata.formatted_add
+            formatted_add: geodata.formatted_add,
+            lat: geodata.lat,
+            long: geodata.long
         });
       
     })
     .then((response) => {
         var dsdata = {
             current: {
-                temp: response.data.currently.temperature,
-                appTemp: response.data.currently.apparentTemperature,
+                temp: Math.round(response.data.currently.temperature),
+                appTemp: Math.round(response.data.currently.apparentTemperature),
                 summary: response.data.currently.summary,
                 icon: response.data.currently.icon,
+                hourly: response.data.hourly.summary
             },
             daily: {
                 summary: response.data.daily.summary,
-                dailySummary: response.data.daily.data[0].summary,
-                dailyHigh: response.data.daily.data[0].temperatureHigh,
-                dailyLow: response.data.daily.data[0].temperatureLow
+                dailyHigh: Math.round(response.data.daily.data[0].temperatureHigh),
+                dailyLow: Math.round(response.data.daily.data[0].temperatureLow)
             }
         };
+
+        if (response.data.hasOwnProperty('alerts')) {
+            dsdata.current.alerts = response.data.alerts[0].title;
+            dsdata.current.alertsTrue = "true";
+        }
         
         return {
             dsdata: dsdata,
-            formatted_add: response.config.formatted_add
+            formatted_add: response.config.formatted_add,
+            lat: response.config.lat,
+            long: response.config.long
         };
     })
     .catch((e) => {
