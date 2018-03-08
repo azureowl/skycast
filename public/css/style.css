@@ -49,9 +49,16 @@ header .search {
 }
 /* line 43, style.scss */
 header .search form {
-  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 55%;
 }
-/* line 46, style.scss */
+/* line 48, style.scss */
 header .search form input[type="text"] {
   border: 0;
   border-radius: 20px;
@@ -61,7 +68,7 @@ header .search form input[type="text"] {
   width: 80%;
 }
 
-/* line 58, style.scss */
+/* line 60, style.scss */
 button {
   border: none;
   border-radius: 5px;
@@ -82,64 +89,64 @@ button {
   vertical-align: bottom;
   width: 1.8em;
 }
-/* line 83, style.scss */
+/* line 85, style.scss */
 button i {
   font-size: 1em;
 }
-/* line 87, style.scss */
+/* line 89, style.scss */
 button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 93, style.scss */
+/* line 95, style.scss */
 .display {
   margin: 3em 0 3em 0;
 }
 
-/* line 97, style.scss */
+/* line 99, style.scss */
 .weather {
   color: #333333;
   font-size: 1.8em;
 }
-/* line 100, style.scss */
+/* line 102, style.scss */
 .weather .weather-main {
   text-align: center;
 }
-/* line 103, style.scss */
+/* line 105, style.scss */
 .weather .weather-main div:nth-child(1), .weather .weather-main div:nth-child(2) {
   display: inline-block;
 }
-/* line 106, style.scss */
+/* line 108, style.scss */
 .weather .weather-main div:nth-child(2) {
   vertical-align: top;
 }
-/* line 108, style.scss */
+/* line 110, style.scss */
 .weather .weather-main div:nth-child(2) .secondary {
   display: block;
   font-size: 16px;
 }
-/* line 111, style.scss */
+/* line 113, style.scss */
 .weather .weather-main div:nth-child(2) .secondary .weather-attr {
   padding: 0 .5em 0 0;
 }
-/* line 117, style.scss */
+/* line 119, style.scss */
 .weather .hourly, .weather .secondary > span {
   font-weight: 300;
 }
-/* line 120, style.scss */
+/* line 122, style.scss */
 .weather .hourly {
   text-align: center;
 }
-/* line 123, style.scss */
+/* line 125, style.scss */
 .weather .weather-attr {
   font-weight: bold;
 }
-/* line 126, style.scss */
+/* line 128, style.scss */
 .weather .alert {
   display: none;
 }
-/* line 129, style.scss */
+/* line 131, style.scss */
 .weather p[data-alert="true"] {
   display: block;
   color: red;
@@ -148,7 +155,7 @@ button::-moz-focus-inner {
   font-weight: 400;
   margin: 1em;
 }
-/* line 136, style.scss */
+/* line 138, style.scss */
 .weather p[data-alert="true"] i {
   margin-right: .5em;
 }

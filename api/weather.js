@@ -4,7 +4,6 @@ var storedData = (address) => {
     var result = skycast.getWeather(address);
     
     return result.then((response) => {
-        console.log(response.dsdata.current.alertsTrue);
         return dsObject = {
             address: response.formatted_add,
             lat: response.lat,
