@@ -1,7 +1,5 @@
 (function(global) {
-    "use strict";
-  console.log("in skycons.js");
-    
+    "use strict";    
     var requestInterval, cancelInterval;
   
     (function() {
