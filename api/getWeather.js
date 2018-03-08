@@ -1,14 +1,16 @@
-const config = require('../config/config.js');
+// const config = require('../config/config.js');
 const axios = require('axios');
 
 let search = (userInput) => {
     return encodeURIComponent(userInput);
 };
 
-var dsReq = `https://api.darksky.net/forecast/${config.getKey().ds_key}`;
+console.log(process.env.ds_key);
+
+var dsReq = `https://api.darksky.net/forecast/${process.env.ds_key}`;
 
 const getWeather = (address) => {
-    let geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${search(address)}&key=${config.getKey().gg_key}`;
+    let geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${search(address)}&key=${process.env.gg_key}`;
                 
     return axios.get(geoReq)
     .then((response) => {
