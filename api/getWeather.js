@@ -1,4 +1,4 @@
-const config = require('../config/config.js');
+// const config = require('../config/config.js');
 const axios = require('axios');
 
 let search = (userInput) => {
@@ -6,6 +6,7 @@ let search = (userInput) => {
 };
 
 var dsReq = `https://api.darksky.net/forecast/${process.env.ds_key}`;
+
 // var dsReq = `https://api.darksky.net/forecast/${config.getKey().ds_key}`;
 
 const getWeather = (address) => {
