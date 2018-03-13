@@ -16,6 +16,7 @@ var storedData = (address) => {
             dailyLow: response.dsdata.daily.dailyLow,
             icon: response.dsdata.current.icon,
             alert: response.dsdata.current.alerts,
+            alertsURI: response.dsdata.current.alertsURI,
             alertsTrue: response.dsdata.current.alertsTrue
         };    
     });

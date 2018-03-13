@@ -1,17 +1,17 @@
-// const config = require('../config/config.js');
+const config = require('../config/config.js');
 const axios = require('axios');
 
 let search = (userInput) => {
     return encodeURIComponent(userInput);
 };
 
-console.log(process.env.ds_key);
-
 var dsReq = `https://api.darksky.net/forecast/${process.env.ds_key}`;
+// var dsReq = `https://api.darksky.net/forecast/${config.getKey().ds_key}`;
 
 const getWeather = (address) => {
     let geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${search(address)}&key=${process.env.gg_key}`;
-                
+    // let geoReq = `https://maps.googleapis.com/maps/api/geocode/json?address=${search(address)}&key=${config.getKey().gg_key}`;
+    
     return axios.get(geoReq)
     .then((response) => {
         var geodata = {
@@ -45,6 +45,7 @@ const getWeather = (address) => {
 
         if (response.data.hasOwnProperty('alerts')) {
             dsdata.current.alerts = response.data.alerts[0].title;
+            dsdata.current.alertsURI = response.data.alerts[0].uri;
             dsdata.current.alertsTrue = "true";
         }
         
